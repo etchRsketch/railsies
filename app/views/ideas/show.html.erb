@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="row">
+  <div class="span9">
+    <%= image_tag(@idea.picture_url, :width => "100%") if @idea.picture.present? %>
+  </div>
+
+  <div class="span3">
+    <p><h4><b><%= @idea.name %></b></h4></p>
+    <p><%= @idea.description %></p>
+    <p>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
+      <%= link_to 'Back', ideas_path %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+<p>
+  <div class="span4">
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <div>
+        <strong><%= comment.user_name %></strong>
+        <br />
+        <p><%= comment.body %></p>
+        <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Arse ya shore?' } %></p>
+      </div>
+    <% end %>
+    <%= render 'comments/form' %>
+  </div>
+</p>
+</div>
+
