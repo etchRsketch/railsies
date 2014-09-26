@@ -7,6 +7,8 @@ gem 'rails', '4.1.1'
 gem 'sqlite3'
 # Use carrierwave for picture uploads $.
 gem 'carrierwave'
+# Use devise for authentication $.
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
